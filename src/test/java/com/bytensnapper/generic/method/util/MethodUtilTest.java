@@ -1,5 +1,7 @@
 package com.bytensnapper.generic.method.util;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +26,8 @@ public class MethodUtilTest {
 	}
 
 	@Test(expected = ClassCastException.class)
-	public void testCreateInstanceClassCastException() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+	public void testCreateInstanceClassCastException() throws InstantiationException, IllegalAccessException,
+			ClassNotFoundException {
 
 		Person person = MethodUtil.createInstance(carClassName);
 	}
@@ -167,4 +170,31 @@ public class MethodUtilTest {
 
 	}
 
+	@Test
+	public void testprintInfo() {
+
+		ByteArrayOutputStream outSream = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outSream));
+
+		Person person1 = new Person();
+		person1.setName("Ahmed");
+		person1.setEmailAddress("ahmed.hosny@bytesnapper.com");
+		person1.setAddress("Giza,Egypt");
+
+		Person person2 = new Person();
+		person2.setName("Ali");
+		person2.setEmailAddress("ali@bytesnapper.com");
+		person2.setAddress("Cairo,Egypt");
+
+		List<Person> personList = new ArrayList<Person>();
+
+		personList.add(person1);
+		personList.add(person2);
+		MethodUtil.printInfo(personList);
+		// expected output including \n characters
+		String expected = "Ahmed;Giza,Egypt;ahmed.hosny@bytesnapper.com\nAli;Cairo,Egypt;ali@bytesnapper.com\n";
+		Assert.assertEquals(expected, outSream.toString());
+		// reset output stream to original state
+		System.setOut(System.out);
+	}
 }

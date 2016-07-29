@@ -7,7 +7,7 @@ import java.util.List;
 public class MethodUtil {
 
 	/**
-	 * used to create in instance of any class by reflection using default
+	 * A generic method used to create in instance of any class by reflection using default
 	 * constructor by passing T type Class
 	 * 
 	 * @param clazz
@@ -23,7 +23,7 @@ public class MethodUtil {
 	}
 
 	/**
-	 * used to create in instance of any class by reflection using default
+	 * A generic method used to create in instance of any class by reflection using default
 	 * constructor by passing full qualified class name of T type
 	 * 
 	 * @param className
@@ -42,22 +42,7 @@ public class MethodUtil {
 	}
 
 	/**
-	 * A generc method used to add any type T of object to list of the same type
-	 * T
-	 * 
-	 * @param t 
-	 *            instance of class T
-	 * @param list
-	 *            List{@code<T>} of class T
-	 * @return List{@code<T>} after adding new element
-	 */
-	public static <T> List<T> addToList(T t, List<T> list) {
-		list.add(t);
-		return list;
-	}
-
-	/**
-	 * used to create in instance of any class by reflection using constructor
+	 * A generic method used to create in instance of any class by reflection using constructor
 	 * matching argument types and passing these arguments
 	 * 
 	 * @param className
@@ -87,4 +72,28 @@ public class MethodUtil {
 
 	}
 
+	/**
+	 * A generic method used to add any type T of object to list of the same type
+	 * T
+	 * 
+	 * @param t
+	 *            instance of class T
+	 * @param list
+	 *            List{@code<T>} of class T
+	 * @return List{@code<T>} after adding new element
+	 */
+	public static <T> List<T> addToList(T t, List<T> list) {
+		list.add(t);
+		return list;
+	}
+	
+	/**
+	 * A generic method used to add loop print toString method
+	 * @param list
+	 */
+	public static <E> void printInfo(List<E> list) {
+		for (E element : list) {
+			System.out.println(element.toString());
+		}
+	}
 }

@@ -69,7 +69,8 @@ public class Person {
 	}
 
 	/**
-	 * @param car the car to set
+	 * @param car
+	 *            the car to set
 	 */
 	public void setCar(Car car) {
 		this.car = car;
@@ -83,10 +84,15 @@ public class Person {
 	}
 
 	/**
-	 * @param pet the pet to set
+	 * @param pet
+	 *            the pet to set
 	 */
 	public void setPet(Pet pet) {
 		this.pet = pet;
 	}
 
+	@Override
+	public String toString() {
+		return name + ";" + address + ";" + emailAddress;
+	}
 }
