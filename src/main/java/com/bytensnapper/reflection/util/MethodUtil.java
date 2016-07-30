@@ -1,4 +1,4 @@
-package com.bytensnapper.generic.method.util;
+package com.bytensnapper.reflection.util;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -7,8 +7,8 @@ import java.util.List;
 public class MethodUtil {
 
 	/**
-	 * A generic method used to create in instance of any class by reflection using default
-	 * constructor by passing T type Class
+	 * A generic method used to create in instance of any class by reflection
+	 * using default constructor by passing T type Class
 	 * 
 	 * @param clazz
 	 *            Class for the T type
@@ -17,14 +17,12 @@ public class MethodUtil {
 	 * @throws InstantiationException
 	 */
 	public static <T> T createInstance(Class<T> clazz) throws InstantiationException, IllegalAccessException {
-
 		return clazz.newInstance();
-
 	}
 
 	/**
-	 * A generic method used to create in instance of any class by reflection using default
-	 * constructor by passing full qualified class name of T type
+	 * A generic method used to create in instance of any class by reflection
+	 * using default constructor by passing full qualified class name of T type
 	 * 
 	 * @param className
 	 *            full qualified class name of T type
@@ -35,15 +33,15 @@ public class MethodUtil {
 	 */
 	public static <T> T createInstance(String className) throws InstantiationException, IllegalAccessException,
 			ClassNotFoundException {
-
 		@SuppressWarnings("unchecked")
 		Class<T> clazz = (Class<T>) Class.forName(className);
 		return clazz.newInstance();
+		
 	}
 
 	/**
-	 * A generic method used to create in instance of any class by reflection using constructor
-	 * matching argument types and passing these arguments
+	 * A generic method used to create in instance of any class by reflection
+	 * using constructor matching argument types and passing these arguments
 	 * 
 	 * @param className
 	 *            full qualified class name of T type
@@ -73,8 +71,8 @@ public class MethodUtil {
 	}
 
 	/**
-	 * A generic method used to add any type T of object to list of the same type
-	 * T
+	 * A generic method used to add any type T of object to list of the same
+	 * type T
 	 * 
 	 * @param t
 	 *            instance of class T
@@ -86,9 +84,10 @@ public class MethodUtil {
 		list.add(t);
 		return list;
 	}
-	
+
 	/**
 	 * A generic method used to add loop print toString method
+	 * 
 	 * @param list
 	 */
 	public static <E> void printInfo(List<E> list) {

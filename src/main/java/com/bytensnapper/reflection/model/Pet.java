@@ -1,4 +1,4 @@
-package com.bytensnapper.generic.method.model;
+package com.bytensnapper.reflection.model;
 
 public class Pet {
 

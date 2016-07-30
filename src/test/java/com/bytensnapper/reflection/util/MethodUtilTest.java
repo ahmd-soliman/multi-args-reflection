@@ -1,4 +1,4 @@
-package com.bytensnapper.generic.method.util;
+package com.bytensnapper.reflection.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -9,14 +9,15 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.bytensnapper.generic.method.model.Car;
-import com.bytensnapper.generic.method.model.Person;
-import com.bytensnapper.generic.method.model.Pet;
+import com.bytensnapper.reflection.model.Car;
+import com.bytensnapper.reflection.model.Person;
+import com.bytensnapper.reflection.model.Pet;
+import com.bytensnapper.reflection.util.MethodUtil;
 
 public class MethodUtilTest {
 
-	private final String personClassName = "com.bytensnapper.generic.method.model.Person";
-	private final String carClassName = "com.bytensnapper.generic.method.model.Car";
+	private final String personClassName = "com.bytensnapper.reflection.model.Person";
+	private final String carClassName = "com.bytensnapper.reflection.model.Car";
 
 	@Test
 	public void testCreateInstance() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
